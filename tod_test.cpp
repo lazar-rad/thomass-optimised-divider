@@ -60,7 +60,7 @@ void test(int divisor, int shiftBits, int dividends[], int nDiv)
 
 int __attribute__((weak)) main()
 {
-    Divider div10(10, 32);
+    Divider div10(10);
     cout << "factor = " << div10.getFactor() << ", " << "shiftBits = " << div10.getShiftBits() << endl;
     showEquation(div10, 546789097);
 

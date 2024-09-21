@@ -1,6 +1,15 @@
 #ifndef __TOD__H__
 #define __TOD__H__
 
+/*
+ *  tod.h
+ *
+ *  An optimised divider
+ *  
+ *  Conceptualised on 2024-08-05 on ideas provided by Thomas Hoehenleitner (github.com/rokath)
+ *  Implemented in the following weeks by Lazar Radosavljevic (github.com/lazar-rad)
+ */
+
 #include <climits>
 #include <cmath>            
 
@@ -13,7 +22,7 @@ struct divres
 class Divider
 {
 public:
-    Divider(int divisor, int shiftBits) :
+    Divider(int divisor, int shiftBits = 32) :
         divisor_abs(divisor >= 0 ? divisor : -divisor),
         divisor_pos(divisor > 0),
         shiftBits  (shiftBits > 32 ? 32 : (shiftBits < 1 ? 1 : shiftBits)),
