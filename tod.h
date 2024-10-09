@@ -29,7 +29,7 @@ public:
         factor     (divisor_abs != 0 ? (int)ceil((1ul << shiftBits) * 1.0 / divisor_abs) : 0)
     { }
 
-    divres operator()(int dividend)
+    inline divres operator()(int dividend)
     {
         if (divisor_abs == 0)
             return { dividend >= 0 ? INT_MAX : INT_MIN, 0 };
